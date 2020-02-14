@@ -23,13 +23,22 @@ const StarWarsCharacter = ({
       <h2>{name}</h2>
       </div>
       <div className="character-details" style={style}>
-        <p>Birth Year: {birthYear}</p>
-        <p>Gender: {gender}</p>
-        <p>Height: {height}</p>
-        <p>Mass: {mass}</p>
-        <p>Eye Color: {eyeColor}</p>
-        <p>Hair Color: {hairColor}</p>
-        <p>Skin Color: {skinColor}</p>
+        {
+          birthYear !== 'n/a' && birthYear !== 'unknown' ?
+          <p><b>Birth Year:</b> {birthYear}</p> : null
+        }
+        {
+          gender !== 'n/a' && gender !== 'none' ? 
+          <p><b>Gender:</b> {gender}</p> : null 
+        }
+        {
+          hairColor !== 'n/a' && hairColor !== 'none' ?
+          <p><b>Hair Color:</b> {hairColor}</p> : null
+        }
+        <p><b>Height:</b> {height}</p>
+        <p><b>Mass:</b> {mass}</p>
+        <p><b>Eye Color:</b> {eyeColor}</p>
+        <p><b>Skin Color:</b> {skinColor}</p>
       </div>
     </div>
   );
